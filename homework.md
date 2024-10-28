@@ -9,3 +9,12 @@ install nodemon and update script inside package.json
 diff between caret and tilde (^ ~ )
 what is dependency
 what is the use of -g on while install npm
+initilize git
+.gitignore
+create a remotr repo on github
+push all code to the github
+git add . this will add all file to the github
+
+homework
+you have to play with route extension ex /hello /test
+order of the routes matter
