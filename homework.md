@@ -18,3 +18,8 @@ git add . this will add all file to the github
 homework
 you have to play with route extension ex /hello /test
 order of the routes matter
+WE DO NOT USE BROWSER TO TEST API BROWSER IS THE WORST
+when ever we do an route the brower use get method
+we use postman to test api
+install postman app and make a workspace/collection > test the api call
+write a logic to handle get post patch put delete api call and test them on postman
