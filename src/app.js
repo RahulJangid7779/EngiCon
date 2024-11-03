@@ -52,23 +52,32 @@ const app = express(); // this mean that we create the application
 // /user --> route 1 parameter
 // (req,res)----> route handler 2 parameter
 // there can be multiple route handler
-app.use(
-  "/user",
+app.use("/user", [
   (req, res, next) => {
     console.log("handling the route user 1");
+    next();
     res.send("response!!");
-    next(); // this next function give by express js
-  },
-  (req, res) => {
+    // this next function give by express js
+  }, // WHEN the next came first and then come response it will print second response and get the error. when one response send and we send second response again then it will create an error bec there is multiple request at the same time1
+  (req, res, next) => {
     console.log("handling the route user 2");
     res.send("2nd Response !!");
-  }
-);
-app.use("/user", (req, res) => {}); // the request is sending requests ... .....
-// that why we use route   handeler to handle the request beacuse request id sending
+    next();
+  },
+  (req, res, next) => {
+    console.log("handling the route user 2");
+    req.send("response 3");
+    next();
+  },
+]);
+// app.use("/user", (req, res) => {}); // the request is sending requests ... .....
+// we can pass into array also
+// // that why we use route   handeler to handle the request beacuse request id sending
 app.listen(3000, () => {
   console.log("server is succesfully listen on the port number 3000");
-}); // this mean that we listen the server on port number 3000 and also take the callback
+});
+
+// this mean that we listen the server on port number 3000 and also take the callback
 // npm i -g nodemon this insall nodemon by the help of this we do not have to close the server again an again manually it will automatically close this
 // we we by mistakly delete our node module we don't have to panic we can reinstalled it by the command npm install
 // git

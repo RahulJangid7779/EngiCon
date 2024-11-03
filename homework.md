@@ -23,3 +23,9 @@ when ever we do an route the brower use get method
 we use postman to test api
 install postman app and make a workspace/collection > test the api call
 write a logic to handle get post patch put delete api call and test them on postman
+Dynamic routing
+create multiple route handler
+next() function and errors along with res.send()
+middleware
+how express js basically handle request behind the scenes
+satus code
