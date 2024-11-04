@@ -29,3 +29,4 @@ next() function and errors along with res.send()
 middleware
 how express js basically handle request behind the scenes
 satus code
+diffrence between use all get
