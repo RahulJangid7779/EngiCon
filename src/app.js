@@ -109,11 +109,27 @@ const { adminauth } = require("./middlewares" / "auth");
 // app.get("/admin/deleteUser", (req, res) => {
 //   res.send("All data delete");
 // });
-app.get("/user", adminauth, (req, res) => {
-  res.send("all data send");
+// app.get("/user", adminauth, (req, res) => {
+//   res.send("all data send");
+// });
+// ERROR HANDLEING
+app.use("/getuserdata", (res, res) => {
+  try {
+    throw new Error("fafafc");
+    res.send("user data send");
+  } catch (err) {
+    res.status(500).send("user data send");
+  }
 });
-
+// When ever we get an error when we call the app.get/getuser its will expose lots of thing to handle this we create a new
+// routuing which contain error as a parameter and we pass this on the first
+app.use("/", (err, req, res, next) => {
+  if (err) {
+    res.status(500).send("somthing went wrong");
+  }
+});
 app.listen(3000, () => {
+  // log your error
   console.log("server is succesfully listen on the port number 3000");
 });
 
