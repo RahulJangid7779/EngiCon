@@ -1,5 +1,7 @@
 const express = require("express"); // this line is use to require the express folder
-const app = express(); // this mean that we create the application
+const app = express();
+const { adminauth } = require("./middlewares" / "auth");
+// this mean that we create the application
 // this is overwrite all the other router
 // app.use("/test", (req, res) => {
 //   res.send("hello from the server");
@@ -74,19 +76,41 @@ const app = express(); // this mean that we create the application
 // we can pass into array also
 
 // // that why we use route   handeler to handle the request beacuse request id sending
-app.get("/admin/getAllData", (req, response) => {
-  // logic of checking if the request is authorized
-  // res.send("all data sent");
-  const token = "xyz";
-  const isAdminAuthorized = token === "xyx";
-  if (isAdminAuthorized) {
-    res.send("ALL DATA SEND");
-  } else {
-    res.send(404).send("unauthorized request");
-  }
-});
-app.get("/admin/deleteUser", (req, res) => {
-  res.send("All data delete");
+// app.get("/admin/getAllData", (req, response) => {
+//   // logic of checking if the request is authorized
+//   // res.send("all data sent");
+//   const token = "xyz";
+//   const isAdminAuthorized = token === "xyx";
+//   if (isAdminAuthorized) {
+//     res.send("ALL DATA SEND");
+//   } else {
+//     res.send(404).send("unauthorized request");
+//   }
+// });
+// app.get("/admin/deleteUser", (req, res) => {
+//   res.send("All data delete");
+// });
+// HANDLE AUTH MIDDLEWARE FOR ALL GET POST ,...request
+// app.use("/admin", (req, res, next) => {
+//   console.log("Admin auth is getting check out");
+//   const token = "xyz";
+//   const isAdminAuthorized = token === "xyz";
+//   if (!isAdminAuthorized) {
+//     res.send("Unauthorized request");
+//   } else {
+//     next();
+//   }
+// });
+// app.use("/admin", adminauth);
+// app.get("/admin/getAllData", (req, response) => {
+//   // logic of checking if the request is authorized
+//   res.send("all data sent");
+// });
+// app.get("/admin/deleteUser", (req, res) => {
+//   res.send("All data delete");
+// });
+app.get("/user", adminauth, (req, res) => {
+  res.send("all data send");
 });
 
 app.listen(3000, () => {

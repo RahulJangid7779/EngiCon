@@ -30,3 +30,5 @@ middleware
 how express js basically handle request behind the scenes
 satus code
 diffrence between use all get
+write dummy auth middleware for admin
+write a dummy auth middleware for all user route except /user/login
