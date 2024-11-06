@@ -32,3 +32,6 @@ satus code
 diffrence between use all get
 write dummy auth middleware for admin
 write a dummy auth middleware for all user route except /user/login
+error handling
+order of error handling is matter
+try and catch is the correct way of writing error
