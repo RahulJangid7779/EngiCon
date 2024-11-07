@@ -1,6 +1,6 @@
 const express = require("express"); // this line is use to require the express folder
 const app = express();
-const { adminauth } = require("./middlewares" / "auth");
+// const { adminauth } = require("./middlewares" / "auth");
 // this mean that we create the application
 // this is overwrite all the other router
 // app.use("/test", (req, res) => {
@@ -113,21 +113,22 @@ const { adminauth } = require("./middlewares" / "auth");
 //   res.send("all data send");
 // });
 // ERROR HANDLEING
-app.use("/getuserdata", (res, res) => {
-  try {
-    throw new Error("fafafc");
-    res.send("user data send");
-  } catch (err) {
-    res.status(500).send("user data send");
-  }
-});
-// When ever we get an error when we call the app.get/getuser its will expose lots of thing to handle this we create a new
-// routuing which contain error as a parameter and we pass this on the first
-app.use("/", (err, req, res, next) => {
-  if (err) {
-    res.status(500).send("somthing went wrong");
-  }
-});
+// app.use("/getuserdata", (res, res) => {
+//   try {
+//     throw new Error("fafafc");
+//     res.send("user data send");
+//   } catch (err) {
+//     res.status(500).send("user data send");
+//   }
+// });
+// // When ever we get an error when we call the app.get/getuser its will expose lots of thing to handle this we create a new
+// // routuing which contain error as a parameter and we pass this on the first
+// app.use("/", (err, req, res, next) => {
+//   if (err) {
+//     res.status(500).send("somthing went wrong");
+//   }
+// });
+
 app.listen(3000, () => {
   // log your error
   console.log("server is succesfully listen on the port number 3000");

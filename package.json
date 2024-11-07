@@ -1,0 +1,19 @@
+{
+  "name": "engicon",
+  "version": "1.0.0",
+  "description": "EngiCon help to connect Engineers",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "ENGICON": "nodemon src/app.js"
+  },
+  "keywords": [
+    "nodejs",
+    "javascript"
+  ],
+  "author": "Rahul Jangid",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}
