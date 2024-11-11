@@ -44,3 +44,45 @@ DATA SCHEMA &
 5--- how to connnect mogoos to the databbase
 6--- first goes to the database.js files
 7--- using npm i mongoose we can installed the mongoose
+8--- code
+const mongoose = require("mongoose");
+const connectDB = async () => {
+await mongoose.connect(
+"mongodb+srv://rahul6898sharma:7lcUjYPmexXHc6Tq@rahul1data.89iyr.mongodb.net"
+);
+};
+connectDB()
+.then(() => {
+console.log("DataBase connection establish");
+})
+.catch((err) => {
+console.error("Database connot connected");
+});
+9-- when i run into termial nom run ENGICON it will not connectd now we have to coonect database.js to the app.js file using require("./config/database")
+10---- now in the connection string you write the name of data base it will connect to the spafic data base ex like--mongodb+srv://rahul6898sharma:7lcUjYPmexXHc6Tq@rahul1data.89iyr.mongodb.net/First_Data
+if you not cnnecting to its it will refer whole cluster
+//// IMP///
+this is not the write and the bast way to connect
+the problem is that when you run the code of app.js
+app.listen(3000, () => {
+// log your error
+console.log("server is succesfully listen on the port number 3000");
+});
+our server is listen on the port number 3000
+but what if our database is not setup but the server start listen
+this is the big probelm
+once
+connectDB()
+.then(() => {
+console.log("DataBase connection establish");
+app.listen(3000, () => {
+// log your error
+console.log("server is succesfully listen on the port number 3000");
+});
+})
+.catch((err) => {
+console.error("Database connot connected");
+});
+this is the correct waay of doing first eastablish data connection then server get response
+
+---

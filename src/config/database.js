@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const connectDB = async () => {
   await mongoose.connect(
-    "mongodb+srv://rahul6898sharma:7lcUjYPmexXHc6Tq@rahul1data.89iyr.mongodb.net"
+    "mongodb+srv://rahul6898sharma:7lcUjYPmexXHc6Tq@rahul1data.89iyr.mongodb.net/First_Data"
   );
 };
 connectDB()
