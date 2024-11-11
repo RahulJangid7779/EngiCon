@@ -35,3 +35,12 @@ write a dummy auth middleware for all user route except /user/login
 error handling
 order of error handling is matter
 try and catch is the correct way of writing error
+///////
+DATA SCHEMA &
+1----create a config folder in the src folder
+2---- create a database.js file in the config folder
+3---- to connecting to database or to take to the database we will be using npm lib name mongoos
+4---- mongoos very amaziing lib to crete schema also give boilder plates also
+5--- how to connnect mogoos to the databbase
+6--- first goes to the database.js files
+7--- using npm i mongoose we can installed the mongoose

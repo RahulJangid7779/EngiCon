@@ -1,4 +1,4 @@
-Project Roadmap: EngineerConnect
+ Project Roadmap: EngineerConnect
 Phase 1: Concept & Planning
 Market Research: Research existing networking platforms, especially those specific to engineering and tech professionals, to identify features and areas for improvement.
 Define Target Audience: Engineers, recent graduates, freelancers, and industry professionals across different domains.
