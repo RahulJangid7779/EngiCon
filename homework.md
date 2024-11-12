@@ -84,5 +84,51 @@ console.log("server is succesfully listen on the port number 3000");
 console.error("Database connot connected");
 });
 this is the correct waay of doing first eastablish data connection then server get response
+---HOMEWORK---
+1 CREATE A CLUSTER IF DONE
+2 INSTALL MONGOOS
+3 CONNECT THE APPLICATION TO THE DATABASE
+4 CALL THE CONNECT DB FUNCTION DATABASE BEFORE STARTING APPLICATION
+------- CREATE A SCHEMA ----------------
+go and read the schema in the mongoos
+create a folder in src models
+in models create a user.js
+const mongoose = require("mongoose");
+const userSchema = mongoose.Schema({
+indside this you can define the parameter
+use the camilcase
+ex like
+firstName: {
+type: String,
+},
+lastName: {
+type: String,
+},
+emailId: {
+type: String,
+},
+age: {
+type: Number,
+},
+gender: {
+type: String,
+},
+})
+now we have to create the model
+const userModel = mongoose.model("User", userSchema);
+
+first is name of the model in this we use User
+then passs the UserShema
+we have creta a indtance of model like this
+app.post("/signup", async (req, res) => {
+const userObj = new User({
+firstName: "Akashay",
+lastName: "Saini",
+emailId: "rahul@123",
+});
+await User.save();
+});
+---HOMEWORK---
+create a user schema
 
 ---
